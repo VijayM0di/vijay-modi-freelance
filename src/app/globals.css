@@ -3,19 +3,96 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg: #e6ebf0;
+  --bg-deep: #d5dde6;
+  --ink: #12151a;
+  --muted: #4a5563;
+  --line: #b8c2ce;
+  --accent: #c24e1e;
+  --accent-ink: #8f3510;
+  --surface: rgba(255, 255, 255, 0.55);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+  font-family: var(--font-manrope), system-ui, sans-serif;
+}
+
+.font-display {
+  font-family: var(--font-syne), system-ui, sans-serif;
+}
+
+.mesh {
+  background-color: var(--bg);
+  background-image:
+    radial-gradient(ellipse 80% 60% at 10% 0%, rgba(194, 78, 30, 0.18), transparent 55%),
+    radial-gradient(ellipse 70% 50% at 90% 10%, rgba(40, 70, 110, 0.14), transparent 50%),
+    linear-gradient(180deg, #eef2f6 0%, #e6ebf0 40%, #dfe6ee 100%);
+}
+
+.grid-fade {
+  background-image:
+    linear-gradient(rgba(18, 21, 26, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(18, 21, 26, 0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: linear-gradient(180deg, #000 30%, transparent 95%);
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes draw {
+  from {
+    stroke-dashoffset: 240;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.anim-rise {
+  animation: rise 0.7s ease-out both;
+}
+
+.anim-rise-2 {
+  animation: rise 0.7s ease-out 0.12s both;
+}
+
+.anim-rise-3 {
+  animation: rise 0.7s ease-out 0.24s both;
+}
+
+.hero-line {
+  stroke-dasharray: 240;
+  animation: draw 1.4s ease-out 0.3s both;
+}
+
+.project-row {
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.project-row:hover {
+  background-color: rgba(255, 255, 255, 0.72);
+  transform: translateX(4px);
+}
+
+.cta {
+  transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+}
+
+.cta:hover {
+  transform: translateY(-1px);
 }
