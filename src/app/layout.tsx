@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   title: "Vijay Modi — AI Systems Freelancer & Portfolio",
   description:
     "Hire Vijay Modi to build production AI systems: Command Centers, Document AI, RAG/agents, computer vision. Portfolio of Supervity, Quantum Bot, and shipped products.",
-  metadataBase: new URL("https://vijay-modi.vercel.app"),
+  metadataBase: new URL("https://freelance-site-cyan.vercel.app"),
 };
 
 export default function RootLayout({
